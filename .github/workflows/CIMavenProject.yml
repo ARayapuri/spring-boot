@@ -1,6 +1,6 @@
 name: CI Maven Workflow
 on: 
- workflow_dispatch
+  workflow_dispatch
 jobs: 
   CI_Non-containerization_build:
     runs-on: ubuntu-latest
@@ -10,10 +10,10 @@ jobs:
       - name: Set up Java JDK
         uses: actions/setup-java@v3.14.1
         with: 
-          java-version : 17
+          java-version: 17
           distribution: microsoft
       - name: Build using Maven
-        run: mvn --batch-mode --upload-snapshots verify
+        run: mvn --batch-mode verify
       - name: Prepare artifact
         run: |
           mkdir staging
